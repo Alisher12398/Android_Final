@@ -25,13 +25,13 @@ class ActivityAboutContact : AppCompatActivity() {
 
         val contact : ContactModel = database.parceDBtoListcontacts2(choosed_id)
 
-        textview_name.text = contact.name
-        textview_work.text = contact.work_phone_number.toString()
-        textview_home.text = contact.home_phone_number.toString()
-        textview_mobile.text = contact.mobile_phone_number.toString()
+        textview_name.text = "Name: ${contact.name}"
+        textview_work.text = "Work Number: ${contact.work_phone_number}"
+        textview_home.text = "Home Number: ${contact.home_phone_number}"
+        textview_mobile.text = "Mobile: ${contact.mobile_phone_number}"
 
         var string = database.getgroupname(choosed_id)
-        textview_group.text = string
+        textview_group.text = "Group: $string"
 
         when(contact.profile_image){
             "1" ->  image.setImageResource(R.drawable.category1)

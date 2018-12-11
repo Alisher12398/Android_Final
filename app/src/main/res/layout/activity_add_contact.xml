@@ -33,7 +33,7 @@
                 android:id="@+id/textview_mobile"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:hint="Mobile number"
+                android:hint="Mobile number. No spaces and + "
 
                 app:layout_constraintTop_toBottomOf="@id/textview_name"
                 app:layout_constraintBottom_toTopOf="@id/textview_home"/>

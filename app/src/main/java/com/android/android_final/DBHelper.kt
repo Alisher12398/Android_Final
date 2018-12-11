@@ -10,7 +10,7 @@ import android.widget.Toast
 class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION){
 
     companion object {
-        val DATABASE_NAME = "12"
+        val DATABASE_NAME = "20"
         val TABLE_NAME_1 = "products"
         val TABLE_NAME_2 = "cart"
         val TABLE_NAME_3 = "category"
@@ -75,9 +75,9 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
                     val contact = ContactModel()
                     contact.id_contact = cursor.getString(cursor.getColumnIndex("id_contact"))
                     contact.name = cursor.getString(cursor.getColumnIndex("name"))
-                    contact.mobile_phone_number = cursor.getInt(cursor.getColumnIndex("mobile_phone_number"))
-                    contact.home_phone_number = cursor.getInt(cursor.getColumnIndex("home_phone_number"))
-                    contact.work_phone_number = cursor.getInt(cursor.getColumnIndex("work_phone_number"))
+                    contact.mobile_phone_number = cursor.getLong(cursor.getColumnIndex("mobile_phone_number"))
+                    contact.home_phone_number = cursor.getLong(cursor.getColumnIndex("home_phone_number"))
+                    contact.work_phone_number = cursor.getLong(cursor.getColumnIndex("work_phone_number"))
                     contact.profile_image = cursor.getString(cursor.getColumnIndex("profile_image"))
                     contact.id_group = cursor.getString(cursor.getColumnIndex("id_group"))
                     categoryList.add(contact)
@@ -97,9 +97,9 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
                     val contact = ContactModel()
                     contact.id_contact = cursor.getString(cursor.getColumnIndex("id_contact"))
                     contact.name = cursor.getString(cursor.getColumnIndex("name"))
-                    contact.mobile_phone_number = cursor.getInt(cursor.getColumnIndex("mobile_phone_number"))
-                    contact.home_phone_number = cursor.getInt(cursor.getColumnIndex("home_phone_number"))
-                    contact.work_phone_number = cursor.getInt(cursor.getColumnIndex("work_phone_number"))
+                    contact.mobile_phone_number = cursor.getLong(cursor.getColumnIndex("mobile_phone_number"))
+                    contact.home_phone_number = cursor.getLong(cursor.getColumnIndex("home_phone_number"))
+                    contact.work_phone_number = cursor.getLong(cursor.getColumnIndex("work_phone_number"))
                     contact.profile_image = cursor.getString(cursor.getColumnIndex("profile_image"))
                     contact.id_group = cursor.getString(cursor.getColumnIndex("id_group"))
 

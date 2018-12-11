@@ -11,9 +11,9 @@ data class ContactModel(
         var id_contact : String = "",
 
         var name: String = "",
-        var mobile_phone_number: Int = 0,
-        var home_phone_number: Int = 0,
-        var work_phone_number: Int = 0,
+        var mobile_phone_number: Long = 0,
+        var home_phone_number: Long = 0,
+        var work_phone_number: Long = 0,
         var profile_image : String = "",
 
         var id_group : String = ""
