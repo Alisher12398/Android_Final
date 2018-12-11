@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey
         parentColumns = ["id_group"], childColumns = ["id_group"])])
 data class ContactModel(
         @PrimaryKey(autoGenerate = true)
-        var id : String = "",
+        var id_contact : String = "",
 
         var name: String = "",
         var mobile_phone_number: Int = 0,
