@@ -5,9 +5,9 @@
 
     <item
         android:title=""
-        android:id="@+id/refresh_icon"
+        android:id="@+id/toolbar_icon_add"
         app:showAsAction="always"
-        android:icon="@drawable/baseline_refresh_white_36"
+        android:icon="@drawable/baseline_add_black_36"
         >
     </item>
 

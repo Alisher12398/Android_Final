@@ -10,7 +10,7 @@ import android.widget.Toast
 class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION){
 
     companion object {
-        val DATABASE_NAME = "8"
+        val DATABASE_NAME = "10"
         val TABLE_NAME_1 = "products"
         val TABLE_NAME_2 = "cart"
         val TABLE_NAME_3 = "category"
@@ -37,7 +37,7 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         val sql_create_table_contacts = (
                 "CREATE TABLE " +
                         table_contacts + "(" +
-                        table_contacts_id_contact + " VARCHAR PRIMARY KEY NOT NULL, " +
+                        table_contacts_id_contact + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                         table_contacts_name + " VARCHAR, " +
                         table_contacts_mobile_phone_number + " INTEGER, " +
                         table_contacts_home_phone_number + " INTEGER, " +
