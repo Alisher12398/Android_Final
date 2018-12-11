@@ -10,7 +10,7 @@ import android.widget.Toast
 class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION){
 
     companion object {
-        val DATABASE_NAME = "10"
+        val DATABASE_NAME = "11"
         val TABLE_NAME_1 = "products"
         val TABLE_NAME_2 = "cart"
         val TABLE_NAME_3 = "category"
@@ -29,6 +29,7 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         val table_groups= "groups"
         val table_groups_id_group = "id_groups"
         val table_groups_name = "name"
+        val table_groups_priority = "priority"
 
         const val DATABASE_VERSION = 1
     }
@@ -54,7 +55,8 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
                 "CREATE TABLE " +
                         table_groups + "(" +
                         table_groups_id_group + " VARCHAR PRIMARY KEY NOT NULL, " +
-                        table_groups_name + " VARCHAR " +
+                        table_groups_name + " VARCHAR, " +
+                        table_groups_priority + " INTEGER " +
                         ");"
                 )
         db.execSQL(sql_create_table_groups)
@@ -84,6 +86,38 @@ class DBHelper(val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
         }
         cursor.close()
         return categoryList
+    }
+
+    fun parceDBtoListcontacts2(id : String): ContactModel {
+        val db = writableDatabase
+        val selectQuery = "SELECT  * FROM contacts WHERE id_contact LIKE '$id';"
+        val cursor = db.rawQuery(selectQuery, null)
+        cursor.moveToFirst()
+
+                    val contact = ContactModel()
+                    contact.id_contact = cursor.getString(cursor.getColumnIndex("id_contact"))
+                    contact.name = cursor.getString(cursor.getColumnIndex("name"))
+                    contact.mobile_phone_number = cursor.getInt(cursor.getColumnIndex("mobile_phone_number"))
+                    contact.home_phone_number = cursor.getInt(cursor.getColumnIndex("home_phone_number"))
+                    contact.work_phone_number = cursor.getInt(cursor.getColumnIndex("work_phone_number"))
+                    contact.profile_image = cursor.getString(cursor.getColumnIndex("profile_image"))
+                    contact.id_group = cursor.getString(cursor.getColumnIndex("id_group"))
+
+
+        cursor.close()
+        return contact
+    }
+
+    fun getgroupname(id : String): String {
+        val db = writableDatabase
+        val selectQuery = "SELECT name FROM groups WHERE id_groups LIKE '$id';"
+        val cursor = db.rawQuery(selectQuery, null)
+        cursor.moveToFirst()
+
+        val string = cursor.getString(cursor.getColumnIndex("name"))
+
+        cursor.close()
+        return string
     }
 
    /* fun deletefromtable(name : String){

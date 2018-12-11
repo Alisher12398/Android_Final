@@ -11,10 +11,13 @@ import kotlinx.android.synthetic.main.contact_view.view.*
 
 class AdapterMainActivityRecycle(var persons:List<ContactModel>):RecyclerView.Adapter<AdapterMainActivityRecycle.ViewHolder>(){
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.name.text = persons[position].name
         holder.group.text = persons[position].id_group
+
+
 
         when(persons[position].profile_image){
             "1" ->  holder.image.setImageResource(R.drawable.category1)
@@ -23,9 +26,9 @@ class AdapterMainActivityRecycle(var persons:List<ContactModel>):RecyclerView.Ad
         }
     }
 
-    /*fun getId(position: Int): String {
-        return persons[position].id_category
-    }*/
+    fun getId(position: Int): String {
+        return persons[position].id_contact
+    }
 
     override fun onCreateViewHolder(holder: ViewGroup, position: Int): ViewHolder {
         val inflater = LayoutInflater.from(holder.context)
