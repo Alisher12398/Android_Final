@@ -58,7 +58,7 @@
                 android:id="@+id/textview_image"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:hint="image"
+                android:hint="image. (1,2 or 3)"
 
                 app:layout_constraintTop_toBottomOf="@id/textview_work"
                 app:layout_constraintBottom_toTopOf="@id/textview_group"/>
@@ -67,7 +67,7 @@
                 android:id="@+id/textview_group"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:hint="group number"
+                android:hint="group number. (1,2,3,4)"
 
                 app:layout_constraintTop_toBottomOf="@id/textview_image"
                 />
